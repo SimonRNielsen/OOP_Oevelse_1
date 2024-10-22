@@ -8,45 +8,45 @@ namespace OOP___Øvelser
 {
     internal class Weapon
     {
-        private int damage;
         /// <summary>
         /// 
         /// </summary>
-        public Weapon(string weapon)
+        public string Type {  get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Damage {  get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Range {  get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Weapon(string type)
         {
-            switch (weapon)
+            switch (type)
             {
                 case "knife":
-                    Knife();
+                    Type = "Knife";
+                    Damage = 30;
+                    Range = 1;
                     break;
                 case "pistol":
-                    Pistol();
+                    Type = "Pistol";
+                    Damage = 10;
+                    Range = 3;
                     break;
                 case "rifle":
-                    Rifle();
+                    Type = "Rifle";
+                    Damage= 20;
+                    Range = 5;
                     break;
             }
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void Pistol()
+        public int GetDamage(int damage)
         {
-            damage = 10;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void Knife()
-        {
-            damage = 30;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void Rifle()
-        {
-            damage = 20;
+            return Damage;
         }
     }
 }
